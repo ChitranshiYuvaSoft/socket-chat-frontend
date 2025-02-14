@@ -1,101 +1,49 @@
-import Image from "next/image";
+import Link from "next/link";
+import { BsFillSendFill } from "react-icons/bs";
 
-export default function Home() {
+const Page = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="w-full min-h-screen flex items-center justify-center bg-gray-900 p-6 relative">
+      <div className="absolute inset-0 flex justify-center items-center">
+        <div className="w-64 h-64 sm:w-96 sm:h-96 bg-cyan-400 rounded-full blur-[100px] sm:blur-[150px] opacity-30"></div>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <div className="relative w-full max-w-lg sm:max-w-xl h-[100%] bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl shadow-2xl flex flex-col items-center justify-center p-6 sm:p-10 space-y-6 sm:space-y-8">
+        <div className="w-20 h-20 sm:w-20 sm:h-20 bg-white/20 backdrop-blur-md flex items-center justify-center rounded-full shadow-md animate-pulse">
+          <BsFillSendFill className="text-4xl sm:text-5xl text-cyan-300 drop-shadow-lg" />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        <div className="w-full text-center space-y-3 sm:space-y-4">
+          <h3 className="text-2xl sm:text-4xl md:text-3xl font-bold text-white flex items-center justify-center gap-2 sm:gap-3">
+            Hey User
+            <img
+              src="./Image/Hii.png"
+              alt="Hi Icon"
+              className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"
+            />
+          </h3>
+          <h3 className="text-lg sm:text-xl md:text-xl font-medium text-gray-200">
+            Welcome to Our Chat App
+          </h3>
+
+          <p className="text-gray-400 text-base sm:text-lg md:text-base max-w-md mx-auto leading-relaxed">
+            Connect with friends in real-time, experience smooth messaging, and
+            enjoy our interactive chat system.
+          </p>
+        </div>
+
+        <Link
+          href="/login"
+          className="relative bg-cyan-500 hover:bg-cyan-600 text-white text-base sm:text-lg md:text-lg font-semibold rounded-full px-8 sm:px-6 py-3 sm:py-3 shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-cyan-500/50"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          Get Started 🚀
+        </Link>
+
+        <div className="absolute -top-4 sm:-top-6 right-8 sm:right-10 w-2 sm:w-3 h-2 sm:h-3 bg-cyan-300 rounded-full animate-bounce"></div>
+        <div className="absolute bottom-8 sm:bottom-10 left-16 sm:left-20 w-3 sm:w-4 h-3 sm:h-4 bg-cyan-400 rounded-full animate-pulse"></div>
+      </div>
     </div>
   );
-}
+};
+
+export default Page;
