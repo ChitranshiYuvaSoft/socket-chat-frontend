@@ -9,12 +9,10 @@ const layout = ({ children }) => {
     <div className="w-full h-[100vh] bg-gray-900 flex items-center justify-center flex-col">
       <Header />
       <section className="w-[100%] h-[90%] flex items-center justify-center">
-       <Navbar/>
+        <Navbar />
         <Sidebar />
         <main className="w-[80%] h-[100%] flex items-center justify-center">
-          {/* {children}
-           */}
-          <ChatSection />
+          {children}
         </main>
       </section>
     </div>
