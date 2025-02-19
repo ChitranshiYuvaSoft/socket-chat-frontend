@@ -5,8 +5,11 @@ export interface UserInfo {
   password: string;
 }
 
-
 export interface User {
   email: string;
   password: string;
+}
+
+export interface NewMessage {
+  text: string;
 }

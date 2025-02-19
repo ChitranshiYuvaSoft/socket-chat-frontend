@@ -1,10 +1,11 @@
 "use client";
 import { login } from "@/redux/auth/authSlice";
+import { AppDispatch } from "@/redux/store";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 const LoginForm = () => {
-  const dispath = useDispatch();
+  const dispath = useDispatch<AppDispatch>();
 
   const [user, setUser] = useState({
     email: "",
@@ -13,14 +14,14 @@ const LoginForm = () => {
 
   const { email, password } = user;
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUser({
       ...user,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispath(login(user));
   };

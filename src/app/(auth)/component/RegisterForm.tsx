@@ -1,11 +1,12 @@
-"use client"
+"use client";
 import { register } from "@/redux/auth/authSlice";
+import { AppDispatch } from "@/redux/store";
 import { UserInfo } from "@/type";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 const RegisterForm = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const [userInfo, setUserInfo] = useState<UserInfo>({
     username: "",
@@ -15,14 +16,14 @@ const RegisterForm = () => {
 
   const { username, email, password } = userInfo;
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserInfo({
       ...userInfo,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleRegister = (e) => {
+  const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(register(userInfo));
   };

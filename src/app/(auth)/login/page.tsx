@@ -4,7 +4,6 @@ import { FaFacebookF, FaGoogle, FaInstagram } from "react-icons/fa";
 import LoginForm from "../component/LoginForm";
 
 const Login = () => {
-  
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900 p-6 relative overflow-hidden">
       <div className="absolute inset-0 flex justify-center items-center">
